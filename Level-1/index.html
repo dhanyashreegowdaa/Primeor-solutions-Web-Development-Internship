@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Primeor Solutions | Internship Tasks</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #09090b;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #09090b;
+            border-bottom: 1px solid #27272a;
+            padding: 22px 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #a1a1aa;
+            text-decoration: none;
+            margin-left: 28px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            padding: 90px 0 70px;
+        }
+
+        .label {
+            color: #8b8bff;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: 1.05;
+            margin: 15px 0 20px;
+        }
+
+        .hero p {
+            color: #a1a1aa;
+            font-size: 18px;
+            max-width: 750px;
+        }
+
+        /* ================= LEVEL ================= */
+
+        .level-section {
+            padding: 70px 0;
+            border-top: 1px solid #27272a;
+            scroll-margin-top: 90px;
+        }
+
+        .level-header {
+            margin-bottom: 35px;
+        }
+
+        .level-header h2 {
+            font-size: 40px;
+            margin: 10px 0;
+        }
+
+        .level-header p {
+            color: #71717a;
+            font-size: 17px;
+        }
+
+        /* ================= TASK GRID ================= */
+
+        .tasks {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .task {
+            background: #111114;
+            border: 1px solid #303036;
+            border-radius: 16px;
+            padding: 40px;
+            transition: 0.3s ease;
+        }
+
+        .task:hover {
+            transform: translateY(-6px);
+            border-color: #6366f1;
+        }
+
+        .task-number {
+            color: #8b8bff;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .task h3 {
+            font-size: 28px;
+            margin: 18px 0;
+        }
+
+        .task p {
+            color: #a1a1aa;
+            margin-bottom: 25px;
+            min-height: 80px;
+        }
+
+        .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+
+        .tech {
+            border: 1px solid #3f3f46;
+            border-radius: 20px;
+            padding: 5px 13px;
+            color: #a1a1aa;
+            font-size: 13px;
+        }
+
+        .btn {
+            display: inline-block;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            color: #8b8bff;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            padding: 80px 0;
+            border-top: 1px solid #27272a;
+            scroll-margin-top: 90px;
+        }
+
+        .about h2 {
+            font-size: 40px;
+            margin: 10px 0 20px;
+        }
+
+        .about p {
+            color: #a1a1aa;
+            max-width: 850px;
+            font-size: 17px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            border-top: 1px solid #27272a;
+            padding: 30px 0;
+            text-align: center;
+            color: #71717a;
+            font-size: 13px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 800px) {
+
+            .nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .tasks {
+                grid-template-columns: 1fr;
+            }
+
+            .task {
+                padding: 30px;
+            }
+
+            .level-header h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            nav a {
+                margin: 0 5px;
+            }
+
+            .hero {
+                padding: 60px 0 50px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+        <div class="container nav">
+
+            <div class="logo">
+                PRIMEOR
+            </div>
+
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#level1">Level 1</a>
+                <a href="#level2">Level 2</a>
+                <a href="#level3">Level 3</a>
+                <a href="#about">About</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main id="home">
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="container">
+
+                <span class="label">
+                    PRIMEOR SOLUTIONS
+                </span>
+
+                <h1>
+                    Internship Tasks
+                </h1>
+
+                <p>
+                    Explore all the projects completed across
+                    the three levels of the Web Development Internship.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================================== -->
+        <!-- ===================== LEVEL 1 ======================= -->
+        <!-- ===================================================== -->
+
+        <section class="level-section" id="level1">
+
+            <div class="container">
+
+                <div class="level-header">
+
+                    <span class="label">
+                        LEVEL 01
+                    </span>
+
+                    <h2>
+                        Fundamentals of Web Development
+                    </h2>
+
+                    <p>
+                        HTML, CSS and JavaScript fundamentals.
+                    </p>
+
+                </div>
+
+
+                <div class="tasks">
+
+                    <!-- TASK 1 -->
+
+                    <div class="task">
+
+                        <span class="task-number">
+                            TASK 01
+                        </span>
+
+                        <h3>
+                            HTML & CSS
+                        </h3>
+
+                        <p>
+                            A structured and responsive webpage created
+                            using HTML and CSS, focusing on layout,
+                            navigation, forms and modern styling.
+                        </p>
+
+                        <div class="technologies">
+                            <span class="tech">HTML</span>
+                            <span class="tech">CSS</span>
+                        </div>
+
+                        <a
+                            class="btn"
+                            href="Task-1-HTML-CSS/index.html">
+                            View Project →
+                        </a>
+
+                    </div>
+
+
+                    <!-- TASK 2 -->
+
+                    <div class="task">
+
+                        <span class="task-number">
+                            TASK 02
+                        </span>
+
+                        <h3>
+                            JavaScript
+                        </h3>
+
+                        <p>
+                            An interactive web project demonstrating
+                            JavaScript functionality, event handling
+                            and DOM manipulation.
+                        </p>
+
+                        <div class="technologies">
+                            <span class="tech">HTML</span>
+                            <span class="tech">CSS</span>
+                            <span class="tech">JavaScript</span>
+                        </div>
+
+                        <a
+                            class="btn"
+                            href="Task-2-JavaScript/index.html">
+                            View Project →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===================================================== -->
+        <!-- ===================== LEVEL 2 ======================= -->
+        <!-- ===================================================== -->
+
+        <section class="level-section" id="level2">
+
+            <div class="container">
+
+                <div class="level-header">
+
+                    <span class="label">
+                        LEVEL 02
+                    </span>
+
+                    <h2>
+                        Modern Frontend Development
+                    </h2>
+
+                    <p>
+                        Developing modern interfaces using frontend
+                        frameworks and responsive design principles.
+                    </p>
+
+                </div>
+
+
+                <div class="tasks">
+
+                    <!-- TASK 1 -->
+
+                    <div class="task">
+
+                        <span class="task-number">
+                            TASK 01
+                        </span>
+
+                        <h3>
+                            Frontend Framework
+                        </h3>
+
+                        <p>
+                            A frontend project demonstrating
+                            component-based development, responsive
+                            layouts and modern UI concepts.
+                        </p>
+
+                        <div class="technologies">
+                            <span class="tech">HTML</span>
+                            <span class="tech">CSS</span>
+                            <span class="tech">JavaScript</span>
+                            <span class="tech">Bootstrap</span>
+                        </div>
+
+                        <a
+                            class="btn"
+                            href="../Level-2/Task-1-Frontend-Framework/index.html">
+                            View Project →
+                        </a>
+
+                    </div>
+
+
+                    <!-- TASK 2 -->
+
+                    <div class="task">
+
+                        <span class="task-number">
+                            TASK 02
+                        </span>
+
+                        <h3>
+                            Responsive Design
+                        </h3>
+
+                        <p>
+                            A responsive website designed to provide
+                            a consistent user experience across
+                            desktops, tablets and mobile devices.
+                        </p>
+
+                        <div class="technologies">
+                            <span class="tech">HTML</span>
+                            <span class="tech">CSS</span>
+                            <span class="tech">JavaScript</span>
+                        </div>
+
+                        <a
+                            class="btn"
+                            href="../Level-2/Task-2-Responsive-Design/index.html">
+                            View Project →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===================================================== -->
+        <!-- ===================== LEVEL 3 ======================= -->
+        <!-- ===================================================== -->
+
+        <section class="level-section" id="level3">
+
+            <div class="container">
+
+                <div class="level-header">
+
+                    <span class="label">
+                        LEVEL 03
+                    </span>
+
+                    <h2>
+                        Advanced Web Development
+                    </h2>
+
+                    <p>
+                        Creating interactive experiences and polished
+                        web interfaces using advanced web development
+                        techniques.
+                    </p>
+
+                </div>
+
+
+                <div class="tasks">
+
+                    <!-- TASK 1 -->
+
+                    <div class="task">
+
+                        <span class="task-number">
+                            TASK 01
+                        </span>
+
+                        <h3>
+                            Image Manipulation
+                        </h3>
+
+                        <p>
+                            An interactive image manipulation project
+                            demonstrating image handling, visual
+                            effects and JavaScript-based interactions.
+                        </p>
+
+                        <div class="technologies">
+                            <span class="tech">HTML</span>
+                            <span class="tech">CSS</span>
+                            <span class="tech">JavaScript</span>
+                        </div>
+
+                        <a
+                            class="btn"
+                            href="../Level-3/Task-1-Image-Manipulation/index.html">
+                            View Project →
+                        </a>
+
+                    </div>
+
+
+                    <!-- TASK 2 -->
+
+                    <div class="task">
+
+                        <span class="task-number">
+                            TASK 02
+                        </span>
+
+                        <h3>
+                            Landing Page
+                        </h3>
+
+                        <p>
+                            A professional and visually engaging landing
+                            page for the Web Developer Internship Program
+                            at Primeor Solutions.
+                        </p>
+
+                        <div class="technologies">
+                            <span class="tech">HTML</span>
+                            <span class="tech">CSS</span>
+                            <span class="tech">JavaScript</span>
+                        </div>
+
+                        <a
+                            class="btn"
+                            href="../Level-3/Task-2-Landing-Page/index.html">
+                            View Project →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===================================================== -->
+        <!-- ====================== ABOUT ======================== -->
+        <!-- ===================================================== -->
+
+        <section class="about" id="about">
+
+            <div class="container">
+
+                <span class="label">
+                    ABOUT
+                </span>
+
+                <h2>
+                    Primeor Solutions Internship
+                </h2>
+
+                <p>
+                    This website showcases the projects completed
+                    during the Web Development Internship at
+                    Primeor Solutions, covering fundamental,
+                    modern and advanced web development concepts.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container">
+
+            © 2026 Primeor Solutions — Web Development Internship
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
